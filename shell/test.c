@@ -30,6 +30,7 @@ int main()
 		else
 		{
 			int tokenCount = tokenCounter(string, delim);
+			printf("token count: %d\n", tokenCount);
 			char** tokenVec = Mytoc(string, delim); /****Call to Mytoc() function to obtain a vector of tokens.****/
 
 			for (i = 0; i < tokenCount; i++) /****Loop to print the contents of the token vector.****/
