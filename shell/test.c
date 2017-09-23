@@ -21,7 +21,7 @@ int main()
 	{
 		char *string = (char*) malloc(BUFFERSIZE); /****String used to hold the input.****/
 
-		write(1, "$ ", 2);
+		write(1, "$ ", 1);
 		read(0, string, BUFFERSIZE); /****Reads the input to the string variable.****/
 
 		if(strComp(string, "exit\n"))
@@ -39,11 +39,11 @@ int main()
 				printf("\n");
 			}
 
-			for (i = 0; i < tokenCount + 1; i++)
+			for (i = 0; i < tokenCount; i++)
 			{
 				free(tokenVec[i]);
 			}
-			//free(tokenVec); /****Frees the memory allocated to the token vector before moving on the the next input.****/
+			//****Frees the memory allocated to the token vector before moving on the the next input.****/
 		}
 		free(string);
 	}
