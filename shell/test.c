@@ -35,11 +35,8 @@ int main()
 			for (i = 0; i < tokenCount; i++) /****Loop to print the contents of the token vector.****/
 			{
 				printf("[%d] : ", i);
-
 				printf("%s", tokenVec[i]);
-
 				printf("\n");
-				//tokenCount = tokenCounter(string, delim);
 			}
 
 			for (i = 0; i < tokenCount; i++)
