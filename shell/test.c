@@ -14,7 +14,7 @@
 
 int main()
 {
-	int i;
+	int i, tokenCount;
 	char delim = ' ';
 
 	while(1) /****Program runs input prompt until X is typed in.****/
@@ -24,7 +24,7 @@ int main()
 		write(1, "$ ", 2);
 		read(0, string, BUFFERSIZE); /****Reads the input to the string variable.****/
 
-		int tokenCount = tokenCounter(string, delim);
+		tokenCount = tokenCounter(string, delim);
 		printf("token count: %d\n", tokenCount);
 
 		if(strComp(string, "exit\n"))
@@ -48,6 +48,7 @@ int main()
 			//****Frees the memory allocated to the token vector before moving on the the next input.****/
 		}
 		free(string);
+		tokenCount = 0;
 	}
 
 	return 0;
