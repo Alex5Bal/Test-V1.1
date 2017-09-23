@@ -2,9 +2,9 @@ all: test
 
 CFLAGS = -g -O2
 
-test: test.o mytoc.o mystrlib.o
+test: test.o mystrlib.o mytoc.o 
 
-	gcc -o test test.o mytoc.o mystrlib.o
+	gcc -o test test.o mystrlib.o mytoc.o 
 	
 clean: 
 
