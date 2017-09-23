@@ -39,11 +39,11 @@ int main()
 				printf("\n");
 			}
 
-			for (i = 0; i < tokenCount; i++)
+			for (i = 0; i < tokenCount + 1; i++)
 			{
 				free(tokenVec[i]);
 			}
-			free(tokenVec); /****Frees the memory allocated to the token vector before moving on the the next input.****/
+			//free(tokenVec); /****Frees the memory allocated to the token vector before moving on the the next input.****/
 		}
 		free(string);
 	}
