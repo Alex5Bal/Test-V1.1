@@ -24,7 +24,7 @@ int main()
 		write(1, "$ ", 2);
 		read(0, string, BUFFERSIZE); /****Reads the input to the string variable.****/
 
-		if(strComp(string, "exit\n"))
+		if(strComp(string, "exit"))
 			exit(0);
 
 		else
