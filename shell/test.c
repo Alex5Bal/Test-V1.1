@@ -24,7 +24,7 @@ int main()
 		write(1, "$ ", 2);
 		read(0, string, BUFFERSIZE); /****Reads the input to the string variable.****/
 
-		if(strComp(string, "exit"))
+		if(strComp(string, "exit\n"))
 			exit(0);
 
 		else
@@ -39,7 +39,7 @@ int main()
 				printf("%s", tokenVec[i]);
 
 				printf("\n");
-				tokenCount = tokenCounter(string, delim);
+				//tokenCount = tokenCounter(string, delim);
 			}
 
 			for (i = 0; i < tokenCount; i++)
