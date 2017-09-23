@@ -21,7 +21,7 @@ int main()
 	{
 		char *string = (char*) malloc(BUFFERSIZE); /****String used to hold the input.****/
 
-		write(1, "$ ", 1);
+		write(1, "$ ", 2);
 		read(0, string, BUFFERSIZE); /****Reads the input to the string variable.****/
 
 		if(strComp(string, "exit\n"))
