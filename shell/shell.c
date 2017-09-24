@@ -42,7 +42,7 @@ int main(int argc, char** argv, char** envp)
 			{
 				free(args[0]);
 				args[0] = strCat(*path, program);
-				execve(args[0], &args, envp);
+				execve(args[0], args, envp);
 				path++;
 			}
 			printf("Command not found\n");
