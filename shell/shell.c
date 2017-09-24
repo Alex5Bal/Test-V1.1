@@ -4,7 +4,6 @@
 #include <sys/wait.h>
 #include "mytoc.h"
 #include "mystrlib.h"
-#include "shell.h"
 
 #define BUFFERSIZE 150
 
