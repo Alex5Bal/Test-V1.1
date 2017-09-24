@@ -2,9 +2,9 @@ all: shell
 
 CFLAGS = -g -O2
 
-shell: mystrlib.o mytoc.o shell.o
+shell: mytoc.o mystrlib.o shell.o
 
-	cc -o shell mystrlib.o mytoc.o shell.o
+	cc -o shell mytoc.o mystrlib.o shell.o
 	
 clean: 
 
