@@ -1,5 +1,5 @@
-#ifndef shell_included
-#define shell_included
+#ifndef shell
+#define shell
 
 char** programEnvironment(char **envp);
 
