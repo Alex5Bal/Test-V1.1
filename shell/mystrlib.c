@@ -1,4 +1,4 @@
-//#include "mystrlib.h"
+#include "mystrlib.h"
 #include <stdlib.h>
 
 char strComp(char* string1, char* string2)
@@ -54,6 +54,24 @@ char* strCat(char* string1, char* string2)
 	}
 
 	stringOut[i + j] = '\0';
+
+	return stringOut;
+}
+
+char* strCopy(char* stringIn)
+{
+	int i, length;
+	char* stringOut;
+
+	length = strLen(stringIn);
+	stringOut = (char*) malloc(length + 1);
+
+	for(i = 0; i < length; i++)
+	{
+		stringOut[i] = stringIn[i];
+	}
+
+	stringOut[i] = '\0';
 
 	return stringOut;
 }
