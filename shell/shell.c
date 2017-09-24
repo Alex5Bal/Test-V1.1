@@ -68,7 +68,7 @@ int main(int argc, char** argv, char** envp)
 	return 0;
 }
 
-char **programEnvironment(char **envp)
+char** programEnvironment(char **envp)
 {
     char **tokenVec, **pathVec;
     char *path, *pwd, *pwdTemp, *completePath;
