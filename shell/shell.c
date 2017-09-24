@@ -7,6 +7,8 @@
 
 #define BUFFERSIZE 150
 
+char** programEnvironment(char **envp);
+
 int main(int argc, char** argv, char** envp)
 {
 	char** args, path;
