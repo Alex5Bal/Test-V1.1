@@ -72,8 +72,8 @@ int main(int argc, char** argv, char** envp)
 
 char** programEnvironment(char **envp)
 {
-    char **tokenVec, **pathVec;
-    char *path, *pwd, *pwdTemp, *completePath;
+    char** tokenVec, pathVec;
+    char* path, pwd, pwdTemp, completePath;
 
     while(*envp)
     {
