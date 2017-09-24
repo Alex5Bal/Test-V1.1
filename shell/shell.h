@@ -1,6 +1,6 @@
 #ifndef shell_included
 #define shell_included
 
-char **getPathEnvironment(char **envp);
+char **programEnvironment(char **envp);
 
 #endif
