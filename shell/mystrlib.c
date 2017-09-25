@@ -4,18 +4,17 @@
 int strComp(char* string1, char* string2)
 {
 	char match = 1;
+	int i = 0;
 
-	while(*string1 != '\0')
+	while(string1[i] != '\0')
 	{
-		if(*string1 != *string2)
+		if(string1[i] != string2[i])
 			match = 0;
 
-		string1++;
-		string2++;
-
+		i++;
 	}
 
-	if(*string2 != '\0')
+	if(string2[i] != '\0')
 		match = 0;
 
 	return match;
