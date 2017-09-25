@@ -13,6 +13,12 @@ int main(int argc, char** argv, char** envp)
 	char* string;
 	int pid, i = 0;
 
+	for(i = 0; envp[i] != (char*)0; i++)
+	{
+		printf("envp[%d] = %s\n"; i++);
+	}
+	i = 0;
+
 	while(1)
 	{
 		string = (char*) malloc(BUFFERSIZE);
