@@ -11,7 +11,7 @@ int main(int argc, char** argv, char** envp)
 {
 	char** args, path;
 	char* string, program;
-	pid_t pid;
+	int pid;
 
 	while(1)
 	{
@@ -36,7 +36,7 @@ int main(int argc, char** argv, char** envp)
 			}
 			else if(pid == 0)
 			{
-				printf((int)pid);
+				printf(pid);
 			}
 		}
 	}
