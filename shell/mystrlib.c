@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "mystrlib.h"
 
 int strComp(char* string1, char* string2)
@@ -63,7 +62,6 @@ char* strCopy(char* dest, char* src)
 {
 	int i = 0;
 	int srcLength = strLen(src);
-	printf("src length: %d\n", srcLength);
 
 	while(src[i] != '\0')
 	{
