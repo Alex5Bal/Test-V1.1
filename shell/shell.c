@@ -15,7 +15,7 @@ int main(int argc, char** argv, char** envp)
 
 	for(i = 0; envp[i] != (char*)0; i++)
 	{
-		printf("envp[%d] = %s\n"; i++);
+		printf("envp[%d] = %s\n", i, envp[i]);
 	}
 	i = 0;
 
