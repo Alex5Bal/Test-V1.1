@@ -85,6 +85,7 @@ char** Mytoc(char* stringIn, char delim) /****Returns a string vector of space d
 		x++;
 	}
 	tokenVecOut[tokenCount] = (char*)0;
+	printf("test");
 
 	return tokenVecOut;
 
