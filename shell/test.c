@@ -5,7 +5,7 @@
 int main()
 {
 	char string1[] = "hello";
-	char string2[] = "world";
+	char string2[] = " world";
 
 	int match = strComp(string1, string2);
 	printf("Match: %d\n", match);
@@ -20,5 +20,5 @@ int main()
 
 	char* copiedStr = malloc(strLen(catStr));
 	strCopy(copiedStr, catStr);
-	printf("Copied: %s", copiedStr);
+	printf("Copied: %s\n", copiedStr);
 }
