@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "mystrlib.h"
 
 int strComp(char* string1, char* string2)
