@@ -31,13 +31,12 @@ int main(int argc, char** argv, char** envp)
 
 			if(pid < 0)
 			{
-				fprintf(stderr, "fork() failed\n");
+				fprintf(stderr, "Unsuccessful fork()\n");
 				exit(1);
 			}
 			else if(pid == 0)
 			{
-				printf("hello");
-				exit(0);
+				execve("/bin/ls", args, envp);
 			}
 		}
 
