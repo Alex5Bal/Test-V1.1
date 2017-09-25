@@ -9,8 +9,8 @@
 
 int main(int argc, char** argv, char** envp)
 {
-	char** args, tokenVec, pathVec;
-	char* string, program;
+	char** args;
+	char* string;
 	int pid, i = 0;
 
 	while(1)
@@ -20,7 +20,7 @@ int main(int argc, char** argv, char** envp)
 		write(1, "$ ", 2);
 		read(0, string, BUFFERSIZE);
 
-		if(strComp(string, "exit\n"))
+		if(strComp(string, "exit"))
 			exit(0);
 
 		else
