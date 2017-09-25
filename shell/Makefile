@@ -1,14 +1,14 @@
-all: shell
+all: test
 
 CFLAGS = -g -O2
 
-shell: mytoc.o mystrlib.o shell.o
+test: test.o mystrlib.o 
 
-	cc -o shell mytoc.o mystrlib.o shell.o
+	cc -o shell test.o mystrlib.o
 	
 clean: 
 
-	rm -f *.o shell shell.exe
+	rm -f *.o test test.exe
 
-demo: shell
-	./shell
+demo: test
+	./test
