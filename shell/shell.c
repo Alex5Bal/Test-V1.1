@@ -20,7 +20,7 @@ int main(int argc, char** argv, char** envp)
 		write(1, "$ ", 2);
 		read(0, string, BUFFERSIZE);
 
-		if(strCompare(string, "exit\n"))
+		if(strComp(string, "exit\n"))
 			exit(0);
 
 		else
