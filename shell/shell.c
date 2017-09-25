@@ -36,7 +36,7 @@ int main(int argc, char** argv, char** envp)
 			}
 			else if(pid == 0)
 			{
-				printf(pid);
+				printf((int)pid);
 			}
 		}
 	}
