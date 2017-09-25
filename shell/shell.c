@@ -37,6 +37,7 @@ int main(int argc, char** argv, char** envp)
 			else if(pid == 0)
 			{
 				execve("/bin/ls", args, envp);
+				exit(0);
 			}
 		}
 
