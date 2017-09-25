@@ -12,6 +12,7 @@ int strComp(char* string1, char* string2)
 
 		string1++;
 		string2++;
+		printf("test");
 
 	}
 
