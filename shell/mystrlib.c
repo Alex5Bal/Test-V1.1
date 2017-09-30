@@ -74,10 +74,25 @@ char* strCopy(char* dest, char* src)
 	return dest;
 }
 
-void printVector(char** vectorIn)
+void printStringVec(char** vectorIn)
 {
 	for(int i = 0; vectorIn[i] != '\0'; i++)
 	{
 		printf("path[%d] : %s\n", i, vectorIn[i]);
 	}
+}
+
+char* removeNewLine(char* stringIn)
+{
+	char* stringOut;
+
+	for(int i = 0; stringIn[i] != '\0'; i++)
+	{
+		if(stringIn[i] == '\n')
+			stringIn[i] = '\0';
+	}
+
+	stringOut = stringIn;
+
+	return stringOut;
 }

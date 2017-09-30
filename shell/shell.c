@@ -23,7 +23,7 @@ int main(int argc, char** argv, char** envp)
 		write(1, "$ ", 2);
 		read(0, string, BUFFERSIZE);	//Read buffer input into 'string'
 
-		string[2] = '\0';
+		removeNewLine(string);
 
 		if(string[0] == 'X')
 			exit(0);
