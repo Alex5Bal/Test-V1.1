@@ -68,6 +68,7 @@ int main(int argc, char** argv, char** envp)
 				{
 					free(arg[0]);
 					arg[0] = strCat(path[j], command);
+					printf("%s\n", arg[0]);
 					execve(arg[0], arg, envp);
 				}
 
