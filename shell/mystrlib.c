@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "mystrlib.h"
 
 int strComp(char* string1, char* string2)
@@ -60,7 +61,7 @@ char* strCat(char* string1, char* string2)
 char* strCopy(char* dest, char* src)
 {
 	int i = 0;
-	int srcLength = strLen(src);
+	//int srcLength = strLen(src);
 
 	while(src[i] != '\0')
 	{
@@ -71,4 +72,12 @@ char* strCopy(char* dest, char* src)
 	dest[i] = '\0';
 
 	return dest;
+}
+
+void printVector(char** vectorIn)
+{
+	for(int i = 0; vectorIn[i] != '\0'; i++)
+	{
+		printf("path[%d] : %s\n", i, vectorIn[i]);
+	}
 }

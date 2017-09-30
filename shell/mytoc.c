@@ -16,7 +16,7 @@ int tokenCounter(char* stringIn, char delim) /****Returns the number or tokens i
 {
 	int i = 0, numTokens = 1;
 
-	while (stringIn[i] != '\n') /****Traverse the string until the null character is reached.****/
+	while (stringIn[i] != '\0') /****Traverse the string until the null character is reached.****/
 	{
 		if (stringIn[i] == delim) /****While traversing, if a space is encountered add 1 to the token counter.****/
 		{
@@ -32,7 +32,7 @@ int* characterCounter(char* stringIn, int numTokens, char delim) /****Returns an
 	int i, j, k = 0, x = 0, numChars = 0;
 	int* numCharacters  = (int*)calloc(numTokens + 1, sizeof(int)); /****In-method int array used to store the # of characters per token.****/
 
-	for (i = 0; stringIn[i] != '\n'; i++) /****Loop to traverse the entire string.****/
+	for (i = 0; stringIn[i] != '\0'; i++) /****Loop to traverse the entire string.****/
 	{
 		if (stringIn[i] == delim) /****While traversing, if a space is encountered...****/
 		{
@@ -69,7 +69,7 @@ char** Mytoc(char* stringIn, char delim) /****Returns a string vector of space d
 
 	i = 0;
 
-	while (stringIn[x] != '\n') /****Traverse the entire string.****/
+	while (stringIn[x] != '\0') /****Traverse the entire string.****/
 	{
 		if (stringIn[x] != delim) /****If the current character is not equal to the delimiter...****/
 		{

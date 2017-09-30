@@ -9,15 +9,20 @@
 
 int main(int argc, char** argv, char** envp)
 {
-	char** args;
+	char** arg;
+	char** tempVec;
+	char** path;
 	char* string;
-	int pid, i = 0;
+	char* command;
+	pid_t pid;
 
-	for(i = 0; envp[i] != (char*)0; i++)
-	{
-		printf("envp[%d] = %s\n", i, envp[i]);
-	}
-	i = 0;
+
+//	for(i = 0; envp[i] != (char*)0; i++)
+//	{
+//		printf("envp[%d] = %s\n", i, envp[i]);
+//	}
+//	printf("\n\n\n");
+//	i = 0;
 
 	while(1)
 	{
@@ -31,7 +36,7 @@ int main(int argc, char** argv, char** envp)
 
 		else
 		{
-			args = Mytoc(string, ' ');
+			arg = Mytoc(string, ' ');
 
 			pid = fork();
 
@@ -42,7 +47,29 @@ int main(int argc, char** argv, char** envp)
 			}
 			else if(pid == 0)
 			{
-				execve(args[0], args, envp);
+				for(int i = 0; envp[i] != (char*)0; i++)
+				{
+					tempVec = Mytoc(envp[i], '=');
+
+					if(strComp(tempVec[0], "PATH"))
+					{
+						path = Mytoc(tempVec[1], ':');
+					}
+
+					free(tempVec);
+				}
+
+				//printVector(path);
+
+				command = strCat("/", arg[0]);
+
+				for(int j = 0; path[j] != '\0'; j++)
+				{
+					free(arg[0]);
+					arg[0] = strCat(path[j], command);
+					execve(arg[0], arg, envp);
+				}
+
 				printf("Command not found\n");
 				exit(0);
 			}
@@ -54,12 +81,12 @@ int main(int argc, char** argv, char** envp)
 		}
 		free(string);
 
-		for (int i = 0; args[i] != '\0'; i++)
+		for (int i = 0; arg[i] != '\0'; i++)
 		{
-			free(args[i]);
+			free(arg[i]);
 		}
 
-		free(args);
+		free(arg);
 	}
 	return 0;
 }
