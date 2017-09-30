@@ -14,7 +14,7 @@ int main(int argc, char** argv, char** envp)
 	char** path;
 	char* string;
 	char* command;
-	pid_t pid;
+	int pid;
 
 
 //	for(i = 0; envp[i] != (char*)0; i++)
@@ -54,6 +54,7 @@ int main(int argc, char** argv, char** envp)
 					if(strComp(tempVec[0], "PATH"))
 					{
 						path = Mytoc(tempVec[1], ':');
+						break;
 					}
 
 					free(tempVec);
