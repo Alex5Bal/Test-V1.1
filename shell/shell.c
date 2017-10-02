@@ -10,20 +10,20 @@
 int main(int argc, char** argv, char** envp)
 {
 	char** args;	//Stores the arguments passed by the user
-	char** tempVec;	//Stores value of each key in the envp[]
+	char** tempVec;	//Temporary vector used to hold the value of each key in the envp[]
 	char** path;	//Stores the value of PATH
 	char* string;	//Stores the buffer input
 	char* command;	//Stores the command given by the user
-	int pid;	//Stores value of child process after fork()
+	int pid;		//Stores value of child process after fork()
 
 	while(1)
 	{
 		string = (char*) malloc(BUFFERSIZE);
 
-		write(1, "$ ", 2);
+		write(1, "$ ", 1);
 		read(0, string, BUFFERSIZE);	//Read buffer input into 'string'
 
-		removeNewLine(string);   //Remove '\n' from the end of string
+		removeNewLine(string);	//Remove the '\n' character from the end of the input string
 
 		if(string[0] == 'X')
 			exit(0);
@@ -36,7 +36,7 @@ int main(int argc, char** argv, char** envp)
 
 			if(pid < 0)		//Child process creation was unsuccessful
 			{
-				fprintf(stderr, "Unsuccessful fork()\n");
+				perror("Fork failed\n");
 				exit(1);
 			}
 			else if(pid == 0)	//Child process created successfully
@@ -60,7 +60,7 @@ int main(int argc, char** argv, char** envp)
 				{
 					free(args[0]);	//Ready args[0] to store the complete path
 					args[0] = strCat(path[j], command);	//args[0] contains complete path
-				       
+					printf("%s\n", args[0]);
 					execve(args[0], args, envp);	//Execute the complete path if valid
 				}
 
