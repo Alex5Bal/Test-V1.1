@@ -89,7 +89,7 @@ int main(int argc, char** argv, char** envp)
 						close(pipe1[1]);
 						close(pipe2[0]);
 						close(pipe2[1]);
-						wait(NULL);	//Wait for the child process to end
+						wait(pid);	//Wait for the child process to end
 
 					}
 				}
