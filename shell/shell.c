@@ -33,7 +33,7 @@ int main(int argc, char** argv, char** envp)
 	{
 		string = (char*) malloc(BUFFERSIZE);
 
-		write(1, "$ ", 2);
+		write(1, "$ ", 1);
 		read(0, string, BUFFERSIZE);	//Read buffer input into 'string'
 
 		removeNewLine(string);	//Removes '\n' from the end of the input string
@@ -92,6 +92,7 @@ int main(int argc, char** argv, char** envp)
 						wait(pid);	//Wait for the child process to end
 
 					}
+
 				}
 			}
 
