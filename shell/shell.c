@@ -78,6 +78,8 @@ int main(int argc, char** argv, char** envp)
 					{
 						dup2(pipe1[0], STDIN_FILENO);
 						close(pipe1[1]);
+						dup2(pipe2[1], STDOUT_FILENO);  	//Appended (Remove if needed!
+						close(pipe2[0]);					//Appended (Remove if needed!
 						execve("/bin/wc", args, envp);
 						printf("Command not found\n");	//No valid commands were identified
 						exit(0);
