@@ -67,7 +67,7 @@ int main(int argc, char** argv, char** envp)
 				}
 				else
 				{
-					wait(pid);		//Appended(Remove if needed!)
+
 					pid2 = fork();
 
 					if(pid2 < 0)		//Child process creation was unsuccessful
