@@ -12,7 +12,7 @@ int main(int argc, char** argv, char** envp)
 	char** args;	//Stores the arguments passed by the user
 	char** tempVec;	//Temporary vector used to hold the value of each key in the envp[]
 	char** path;	//Stores the value of PATH
-	char* string;	//Stores the buffer input
+	char* string;	//Stores the user input
 	char* command;	//Stores the command given by the user
 	int pipe1[2];
 	int pipe2[2];
@@ -67,6 +67,7 @@ int main(int argc, char** argv, char** envp)
 				}
 				else
 				{
+					wait(pid);		//Appended(Remove if needed!)
 					pid2 = fork();
 
 					if(pid2 < 0)		//Child process creation was unsuccessful
@@ -78,8 +79,8 @@ int main(int argc, char** argv, char** envp)
 					{
 						dup2(pipe1[0], STDIN_FILENO);
 						close(pipe1[1]);
-						dup2(pipe2[1], STDOUT_FILENO);  	//Appended (Remove if needed!
-						close(pipe2[0]);					//Appended (Remove if needed!
+						dup2(pipe2[1], STDOUT_FILENO);  	//Appended (Remove if needed!)
+						close(pipe2[0]);					//Appended (Remove if needed!)
 						execve("/bin/wc", args, envp);
 						printf("Command not found\n");	//No valid commands were identified
 						exit(0);
